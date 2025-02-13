@@ -11,7 +11,7 @@ function AddMentor() {
     useEffect(() => {
         const fetchMentors = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/mentors');
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/mentors`);
                 setMentors(response.data);
             } catch (error) {
                 console.error("Error fetching mentors:", error);
@@ -23,10 +23,10 @@ function AddMentor() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/add-mentor', mentor);
+            await axios.post(`${import.meta.env.VITE_API_URL}/add-mentor`, mentor);
             setMentor({ name: "" });
             // Re-fetch the mentors after adding a new one
-            const response = await axios.get('http://localhost:5000/mentors');
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/mentors`);
             setMentors(response.data);
             setMessage("Mentor added successfully!"); // Set success message
             setTimeout(() => setMessage(""), 3000);
@@ -41,9 +41,9 @@ function AddMentor() {
         const confirmDelete = window.confirm("Are you sure you want to delete this mentor?");
         if (confirmDelete) {
             try {
-                await axios.delete(`http://localhost:5000/delete-mentor/${id}`);
+                await axios.delete(`${import.meta.env.VITE_API_URL}/delete-mentor/${id}`);
                 // Re-fetch the mentors after deleting
-                const response = await axios.get('http://localhost:5000/mentors');
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/mentors`);
                 setMentors(response.data);
                 setMessage("Mentor deleted successfully!"); // Set success message
                 setTimeout(() => setMessage(""), 2000);

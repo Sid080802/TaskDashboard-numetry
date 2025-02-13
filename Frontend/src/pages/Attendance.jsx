@@ -19,18 +19,18 @@ function Attendance() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/users")
+      .get(`${import.meta.env.VITE_API_URL}/users`)
       .then((res) => setUsers(res.data))
       .catch((err) => console.error("Error fetching users:", err));
 
     axios
-      .get("http://localhost:5000/attendance")
+      .get(`${import.meta.env.VITE_API_URL}/attendance`)
       .then((res) => setAttendanceList(res.data))
       .catch((err) => console.error("Error fetching attendance:", err));
 
     // Fetch tasks from the backend
     axios
-      .get("http://localhost:5000/tasks")
+      .get(`${import.meta.env.VITE_API_URL}/tasks`)
       .then((res) => setTasks(res.data))
       .catch((err) => console.error("Error fetching tasks:", err));
   }, []);
@@ -39,7 +39,7 @@ function Attendance() {
     e.preventDefault();
     try {
       // Send the attendance data (keep the date in YYYY-MM-DD format)
-      await axios.post("http://localhost:5000/add-attendance", attendanceData);
+      await axios.post(`${import.meta.env.VITE_API_URL}/add-attendance`, attendanceData);
       // Reset the attendance form but keep today's date
       setAttendanceData({
         date: new Date().toISOString().split("T")[0],
@@ -47,7 +47,7 @@ function Attendance() {
         status: "Present",
       });
       axios
-        .get("http://localhost:5000/attendance")
+        .get(`${import.meta.env.VITE_API_URL}/attendance`)
         .then((res) => setAttendanceList(res.data));
     } catch (error) {
       console.error("Error adding attendance:", error);
@@ -97,7 +97,7 @@ function Attendance() {
   // Update task status
   const handleTaskStatusChange = async (taskId, status) => {
     try {
-      await axios.put(`http://localhost:5000/update-task/${taskId}`, {
+      await axios.put(`${import.meta.env.VITE_API_URL}/update-task/${taskId}`, {
         completed: status,
       });
       // Update task list after change

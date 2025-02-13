@@ -19,7 +19,7 @@ const AddUser = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/users");
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/users`);
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -34,7 +34,7 @@ const AddUser = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/add-user", {
+      await axios.post(`${import.meta.env.VITE_API_URL}/add-user`, {
         name,
         email,
         joiningDate,
@@ -66,7 +66,7 @@ const AddUser = () => {
     const isConfirmed = window.confirm("Are you sure you want to delete this user?");
     if (isConfirmed) {
       try {
-        await axios.delete(`http://localhost:5000/delete-user/${userId}`);
+        await axios.delete(`${import.meta.env.VITE_API_URL}/delete-user/${userId}`);
         setMessage("User deleted successfully!");
         fetchUsers();
         setTimeout(() => {

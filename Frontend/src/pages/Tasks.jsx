@@ -24,7 +24,7 @@ function Tasks() {
 
   const fetchMentors = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/mentors");
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/mentors`);
       setMentors(res.data);
     } catch (error) {
       console.error("Error fetching mentors:", error);
@@ -33,7 +33,7 @@ function Tasks() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/tasks");
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/tasks`);
       setTasks(res.data.sort((a, b) => new Date(a.date) - new Date(b.date))); // Sort tasks by date (ascending)
     } catch (error) {
       console.error("Error fetching tasks:", error);
@@ -43,7 +43,7 @@ function Tasks() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/add-task", taskData);
+      await axios.post(`${import.meta.env.VITE_API_URL}/add-task`, taskData);
       setTaskData({
         date: new Date().toISOString().split("T")[0], // Keep today's date
         mentor: "",
