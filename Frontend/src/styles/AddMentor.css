@@ -1,0 +1,167 @@
+/* ======= Add Mentor Styles ======= */
+.add-mentor-container {
+    width: 120%;
+    padding: 24px;
+    background: linear-gradient(135deg, #E3F2FD, #E0ECFF);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 80px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-mentor-title {
+    font-size: 32px;
+    margin-bottom: 24px;
+    color: #3A3D7A;
+    font-weight: 700;
+    text-align: center;
+}
+
+.add-mentor-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.add-mentor-input {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    background-color: #f4f7fb;
+    transition: border 0.3s ease;
+}
+
+.add-mentor-input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.add-mentor-submit {
+    padding: 14px 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-mentor-submit:hover {
+    background-color: #45a049;
+    transform: translateY(-4px);
+}
+
+.add-mentor-submit:active {
+    transform: translateY(2px);
+}
+
+/* AddMentor.css */
+.add-mentor-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.add-mentor-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.add-mentor-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-mentor-input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.add-mentor-submit {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-mentor-submit:hover {
+    background-color: #218838;
+}
+
+.message {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.mentor-list-container {
+    margin-top: 30px;
+}
+
+.mentor-list-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.mentor-list-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mentor-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.delete-mentor-button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-mentor-button:hover {
+    background-color: #c82333;
+}
+
+
+@media (max-width: 768px) {
+    .add-mentor-container {
+        padding: 16px;
+        margin-top: 20px;
+    }
+
+    .add-mentor-title {
+        font-size: 28px;
+    }
+
+    .add-mentor-form {
+        gap: 15px;
+    }
+
+    .add-mentor-input,
+    .add-mentor-submit {
+        width: 100%;
+    }
+}

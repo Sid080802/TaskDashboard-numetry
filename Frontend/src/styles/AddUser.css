@@ -1,0 +1,191 @@
+/* ======= User Management Layout ======= */
+.user-management {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ======= Add User Styles ======= */
+.add-user-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 24px;
+    background: linear-gradient(135deg, #E3F2FD, #E0ECFF);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+    text-align: center;
+}
+
+.add-user-title {
+    font-size: 28px;
+    margin-bottom: 16px;
+    color: #3A3D7A;
+    font-weight: bold;
+}
+
+.add-user-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.add-user-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+.add-user-input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    background-color: #f4f7fb;
+    transition: border 0.3s ease;
+}
+
+.add-user-input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.add-user-submit {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-user-submit:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+.message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Success and Error Message Styles */
+.message.success {
+    color: black;
+}
+
+.message.error {
+    color: black;
+}
+
+/* ======= User Report Styles ======= */
+.user-report-container {
+    width: 100%;
+    max-width: 95%;
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #E3F2FD, #E0ECFF);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional: Extra space above the report section */
+.user-report-container {
+  margin-top: 100px; /* Adjust this value if needed */
+}
+
+.user-report-title {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    color: #3A3D7A;
+    margin-bottom: 20px;
+}
+
+/* ======= User Report Table Styles ======= */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.user-table th,
+.user-table td {
+    border: 1px solid #00796B;
+    padding: 14px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.user-table th {
+    background: linear-gradient(135deg, #3A3D7A, #5E5CBE);
+    color: white;
+    font-weight: bold;
+}
+
+.user-table tbody tr {
+    background-color: #f8f9fd;
+}
+
+.user-table tbody tr:hover {
+    background-color: #eaf2ff;
+}
+
+/* ======= Delete Button Styles ======= */
+.delete-button{
+    padding: 8px 16px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 10px;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+    transform: translateY(-3px);
+}
+
+.delete-btn:focus {
+    outline: none;
+    border: 2px solid #D32F2F;
+}
+
+/* Smooth scroll behavior for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .user-management {
+        width: 100%;
+    }
+
+    .add-user-container {
+        width: 90%;
+        padding: 16px;
+    }
+
+    .user-report-container {
+        width: 100%;
+    }
+
+    .user-table th,
+    .user-table td {
+        padding: 10px;
+        font-size: 16px;
+    }
+}

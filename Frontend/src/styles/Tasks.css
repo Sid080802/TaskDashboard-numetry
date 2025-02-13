@@ -1,0 +1,230 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+/* Task Section Layout */
+.task-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    max-width: 900px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+/* Form Container - Centered */
+.task-form-container {
+    width: 100%;
+    max-width: 400px; /* Increased width */
+    margin: 40px auto;
+    padding: 24px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+   
+}
+
+.task-form-container:hover {
+    transform: scale(1.02);
+}
+
+.task-title{
+    font-size: 24px;
+    margin-bottom: 18px;
+    color: #3A3D7A;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Form Styling */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+}
+
+/* Increase Date & Mentor Field Size */
+.task-input{
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    width: 100%;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.task-input:focus,
+.task-select:focus {
+    border-color: #3A3D7A;
+    outline: none;
+    box-shadow: 0 0 10px rgba(58, 61, 122, 0.4);
+}
+
+/* Button Styling */
+.task-button {
+    padding: 14px;
+    background: linear-gradient(135deg, #3A3D7A, #5E5CBE);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    width: 100%;
+    max-width: 400px;
+}
+
+.task-button:hover {
+    background: linear-gradient(135deg, #5E5CBE, #3A3D7A);
+    transform: translateY(-2px);
+}
+
+/* Task Report Container - Below Form */
+.task-report-container {
+    width: 120%;
+    max-width: 1500px;
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.task-report-container:hover {
+    transform: scale(1.02);
+}
+
+.task-reports-title {
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: #3A3D7A;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Table Styling */
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.task-table th, 
+.task-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.task-table th {
+    background: linear-gradient(135deg, #3A3D7A, #5E5CBE);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Increase the length (width) of the 1st and 2nd columns */
+.task-table th:first-child, 
+.task-table td:first-child {
+    width: 15%; /* Adjust width as needed */
+}
+
+.task-table th:nth-child(2), 
+.task-table td:nth-child(2) {
+    width: 15%; /* Adjust width as needed */
+}
+
+.task-table tr:nth-child(even) {
+    background-color: #f8f9fd;
+}
+
+.task-table tr:hover {
+    background-color: #eaf2ff;
+}
+
+/* No Data Message */
+.task-no-data {
+    font-size: 16px;
+    color: #555;
+    margin-top: 12px;
+    text-align: center;
+}
+
+/* Search Section Styles */
+.task-search-container {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+}
+
+.task-search-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.task-search-input {
+    padding: 8px 12px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+.task-search-input:focus {
+    outline: none;
+    border: 1px solid #007BFF;
+}
+
+/* Button to Clear Filters */
+.task-clear-filters {
+    background-color: #f44336;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.task-clear-filters:hover {
+    background-color: #d32f2f;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .task-form-container,
+    .task-report-container {
+        width: 90%;
+        padding: 20px;
+    }
+}

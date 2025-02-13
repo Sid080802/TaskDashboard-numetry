@@ -1,0 +1,227 @@
+/* ======= General Styles ======= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f4f4f9;
+}
+
+/* ======= Wrapper for Attendance Page ======= */
+.attendance-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* ======= Centered Attendance Form ======= */
+.attendance-container {
+    width: 100%;
+    max-width: 400px; /* Increased width */
+    margin: 40px auto;
+    padding: 24px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.attendance-container:hover {
+    transform: scale(1.02);
+}
+
+.attendance-title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    color: #3A3D7A;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* ======= Form Inputs ======= */
+.attendance-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.attendance-input,
+.attendance-select {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    width: 100%;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.attendance-input:focus,
+.attendance-select:focus {
+    border-color: #3A3D7A;
+    outline: none;
+    box-shadow: 0 0 10px rgba(58, 61, 122, 0.4);
+}
+
+/* ======= Submit Button ======= */
+.attendance-submit {
+    padding: 12px;
+    background: linear-gradient(135deg, #3A3D7A, #5E5CBE);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.attendance-submit:hover {
+    background: linear-gradient(135deg, #5E5CBE, #3A3D7A);
+    transform: translateY(-2px);
+}
+
+/* ======= Full-Screen Attendance Report ======= */
+.attendance-report-container {
+    width: 140%;
+    height: auto;
+    background: linear-gradient(135deg, #E3F2FD, #E0ECFF);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.attendance-report-title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    color: #3A3D7A;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* ======= Attendance Table ======= */
+.attendance-table {
+    width: 90%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-table th,
+.attendance-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+/* Increase the length (width) of the 1st, 2nd, and Sr. No. columns */
+.attendance-table th:first-child,
+.attendance-table td:first-child {
+    width: 10%; /* Adjust as needed */
+}
+
+.attendance-table th:nth-child(2),
+.attendance-table td:nth-child(2) {
+    width: 25%; /* Adjust as needed */
+}
+
+.attendance-table th:nth-child(3),
+.attendance-table td:nth-child(3) {
+    width: 45%; /* Adjust as needed */
+}
+
+/* Add styles for serial number column */
+.attendance-table th:nth-child(1),
+.attendance-table td:nth-child(1) {
+    text-align: center;
+    width: 10%;
+}
+
+.attendance-table th {
+    background: linear-gradient(135deg, #3A3D7A, #5E5CBE);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.attendance-table tr:nth-child(even) {
+    background-color: #f8f9fd;
+}
+
+.attendance-table tr:hover {
+    background-color: #eaf2ff;
+}
+
+/* Search Section Styles */
+.attendance-search-container {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.attendance-search-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.attendance-search-input {
+    padding: 8px 12px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+.attendance-search-input:focus {
+    outline: none;
+    border: 1px solid #007BFF;
+}
+
+.attendance-clear-filters {
+    background-color: #f44336;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.attendance-clear-filters:hover {
+    background-color: #d32f2f;
+}
+
+
+
+/* ======= Responsive Design ======= */
+@media (max-width: 768px) {
+    .attendance-container {
+        width: 90%;
+    }
+
+    .attendance-table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+
+    .attendance-table th,
+    .attendance-table td {
+        font-size: 14px; /* Smaller font size on mobile */
+    }
+}

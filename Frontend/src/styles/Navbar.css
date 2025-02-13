@@ -1,0 +1,85 @@
+/* Navbar.module.css */
+
+/* ======= Navbar Container ======= */
+.navbar {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  padding: 12px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 30px;
+}
+
+/* ======= Navbar List ======= */
+.navbar-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ======= Navbar Items ======= */
+.navbar-item {
+  margin: 0 18px;
+  position: relative;
+}
+
+/* ======= Navbar Links ======= */
+.navbar-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 14px;
+  transition: color 0.3s ease-in-out, transform 0.2s;
+  display: inline-block;
+}
+
+/* Hover Effect */
+.navbar-link:hover {
+  color: #ff9800;
+  transform: translateY(-2px);
+}
+
+/* Active Link Underline Animation */
+.navbar-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background-color: #ff9800;
+  transition: width 0.3s ease-in-out;
+  margin: auto;
+}
+
+/* When Hovered or Active */
+.navbar-link:hover::after,
+.navbar-item.active .navbar-link::after {
+  width: 100%;
+}
+
+/* ======= Responsive Design ======= */
+@media (max-width: 768px) {
+  .navbar {
+      padding: 10px 0;
+  }
+
+  .navbar-list {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .navbar-item {
+      margin: 5px 0;
+  }
+
+  .navbar-link {
+      font-size: 16px;
+      padding: 6px 10px;
+  }
+}
